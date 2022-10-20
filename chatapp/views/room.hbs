@@ -1,0 +1,766 @@
+<div class="main" style="width: 100vw;
+                        min-height: 100vh;
+                        padding: 0px;
+                        display: flex;
+                        align-items:center;
+                        justify-content: center;
+                        background: linear-gradient(rgba(25,25,25,0.9) 0%, rgba(25,25,25,0.9) 130px, #797878 130px, #797878 100%)">
+    <div class="main-area"
+        style="position:relative;
+            width: 1396px;
+            max-width: 100%;
+            height: calc(100vh - 40px);
+            background: #fff;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
+            display: flex;">
+        <div class="leftside" 
+            id="leftside"
+            style="position:relative;
+                flex: 30%;
+                background:#fff;
+                display: none;
+                border-right: 1px solid rgba(0,0,0,0.2);
+                transition: 2s">
+            <div class="header"
+                style="position:relative;
+                    width: 100%;
+                    height: 60px;
+                    background: #34495e;
+                    display: flex;
+                    align-items: center;      
+                    justify-content: flex-start;
+                    padding: 0 10px;">
+                <img src="{{userIcon}}"
+                    alt=""
+                    style="width: 45px;
+                        height: 45px;
+                        border-radius: 22.5px;
+                        border: 1px solid lightgray;
+                        margin-right: 10px;">
+                <div class="room-login_user"
+                    style="display:flex;
+                        font-weight: 1000;
+                        font-size:large;
+                        color: #fff;">
+                    <!-- ログインユーザ：さん -->{{userName}}
+                    <br>
+                    <input id="userName" type="hidden" value={{userName}}>
+                    <input id="userIcon" type="hidden" value={{userIcon}}>
+                </div>
+                <div class="room-exit"
+                    style="margin: 0 0 0 auto">
+                    <input type="button" 
+                        value="LOGOUT" 
+                        id="logOut"
+                        class="common-button room-exit_button btn btn-danger" 
+                        onclick="exit();"
+                        style="background: none;
+                            border: 2px solid #e74b3c;"
+                        onmouseout="this.style.background='none'"
+                        onmouseover="this.style.background='#e74b3c'">
+                </div>
+            </div>
+            <div class="search-bar"
+                style="position:relative;
+                    width: 100%;
+                    height: 50px;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    background:#34495e;
+                    padding: 0 10px;">
+                <input type="text" 
+                    placeholder="Search members"
+                    style="background: #fff;
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                        padding: 6px;
+                        height: 36px;
+                        border-radius: 18px;
+                        font-size: 14px;
+                        padding-left: 45px;">
+                <ion-icon name="search-outline"
+                        style="position: absolute;
+                            left: 23px;
+                            height: 25px;
+                            width: 25px;
+                            overflow:hidden;">
+                </ion-icon>
+            </div>
+            <div class="user-list"
+                style="position:relative;
+                    height: calc(100% - 110px);
+                    width: 100%;">
+                <div class="block"
+                    style="position: reletive;
+                        width: 100%;
+                        display:flex;
+                        justify-content:flex-start;
+                        align-items:center;
+                        padding: 15px;
+                        border-bottom: 1px solid rgba(0,0,0,0.1);
+                        cursor:pointer;
+                        background: #fff;"
+                    onmouseover="this.style.background='#f5f5f5'"
+                    onmouseout="this.style.background='#fff'">
+                    <div class="imgbox"
+                        style="position: reletive;
+                            height: 45px;
+                            width: 45px;
+                            border-radius: 22.5px;">
+                        <img src="animal_arupaka.png" 
+                            alt="" 
+                            class="cover"
+                            style="width: 45px;
+                                height: 45px;
+                                border-radius: 22.5px;
+                                overflow:hidden;
+                                border: 1px solid lightgray;">
+                    </div>
+                    <div class="name"
+                        style="margin-left: 10px;
+                            height: 40px;">
+                        <p style="font-weight: 1000;
+                            line-height: 40px;">
+                            kaiyo tominaga
+                        </p>
+                    </div>
+                </div>
+                <div class="block"
+                    style="position: reletive;
+                        width: 100%;
+                        display:flex;
+                        justify-content:flex-start;
+                        align-items:center;
+                        padding: 15px;
+                        border-bottom: 1px solid rgba(0,0,0,0.1);
+                        cursor:pointer;
+                        background: #fff;"
+                    onmouseover="this.style.background='#f5f5f5'"
+                    onmouseout="this.style.background='#fff'">
+                    <div class="imgbox"
+                        style="position: reletive;
+                            height: 45px;
+                            width: 45px;
+                            border-radius: 22.5px;">
+                        <img src="animal_buta.png" 
+                            alt="" 
+                            class="cover"
+                            style="width: 45px;
+                                height: 45px;
+                                border-radius: 22.5px;
+                                overflow:hidden;
+                                border: 1px solid lightgray;">
+                    </div>
+                    <div class="name"
+                        style="margin-left: 10px;
+                            height: 40px;">
+                        <p style="font-weight: 1000;
+                            line-height: 40px;">
+                            kaiyo tominaga
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="center"
+            style="position: relative;
+                flex: 70%;
+                background: #fff;">
+            <div class="row"
+                style="position:relative;
+                    display: flex;
+                    width: 100%;
+                    height: 60px;
+                    line-height: 60px;
+                    margin-left: 0px;
+                    align-items:center;
+                    padding-left: 20px;
+                    font-weight: 1000;
+                    font-family: Arial;
+                    background:#34495e;">
+                <button id="label"
+                        style="margin:0px;
+                            width: 40px;
+                            height: 40px;
+                            border: none;
+                            position:absolute;
+                            background: none;
+                            color: #fff;
+                            top: 10px;
+                            left: 5px;
+                            z-index: 1;
+                            outline: none;
+                        ">
+                    <ion-icon name="menu-outline"
+                            style="width: 40px;
+                                height: 40px;
+                                position:relative;
+                                top:-2px;
+                                left:-5px;
+                                cursor:pointer;">
+                    </ion-icon>
+                </button>
+                <h3 style="margin-bottom: 0px;
+                        margin-left: 30px;
+                        color: #fff;">
+                        ChatRoom
+                </h3>
+                <button id="catlabel"
+                        style="margin:0px;
+                            width: 40px;
+                            height: 40px;
+                            border: none;
+                            background: none;
+                            color: #fff;
+                            position:absolute;
+                            top: 10px;
+                            right: 5px;
+                            z-index: 1;
+                            outline: none;">
+                    <ion-icon name="logo-octocat"
+                            style="width: 40px;
+                                height: 40px;
+                                position:relative;
+                                top:-2px;
+                                left:-5px;
+                                cursor:pointer;">
+                    </ion-icon>
+            </div>
+            <div class="room-thread"
+                style="height: calc(100% - 130px);
+                    overflow-y: scroll;
+                    padding: 12px;">
+                <div id="thread">
+                </div>
+            </div>
+            <form method="post" action="/">
+                <div class="chatbox-input"
+                    style="width: 100%;
+                        position:absolute;
+                        bottom: 0px;
+                        min-height: 70px;
+                        background: #B6B6B6;
+                        display:flex;
+                        justify-content:center;
+                        align-items:center;
+                        padding: 10px;">
+                    <div class="room-message"
+                        style="display: flex;
+                        align-items:center;
+                        justify-content:space-between;
+                        width: 100%;">
+                        <textarea id="message" 
+                                class="room-message_textarea" 
+                                placeholder="投稿文を入力してください(文頭に@相手のユーザ名@でDMを送信、/memberでメンバー確認)"
+                                style="border-radius: 20px;
+                                    width: 80%;
+                                    height: 66px;
+                                    max-height: 200px;
+                                    font-size: 18px;
+                                    margin-left: 20px;
+                                    margin-top: 4px;
+                                    margin-bottom: 4px;
+                                    padding: 10px 20px;
+                                    border: none;
+                                    outline: none;
+                                    resize: none;"></textarea>
+                        <input type="button" 
+                            value="投稿" 
+                            id="send"
+                            onclick="publish();"
+                            style="height: 40px;
+                                    width: 58px;
+                                    color: #fff;
+                                    border: none;
+                                    outline: none;
+                                    margin-left: 10px;
+                                    border-radius: 10px;
+                                    background: none;
+                                    border: 2px solid #2c3d50;
+                                    transition: 0.2s"
+                            onmouseout="this.style.background='none'"
+                            onmouseover="this.style.background='#2c3d50'">
+
+                        <input type="button" 
+                                value="メモ"
+                                id="doc" 
+                                onclick="memo();"
+                                style="height: 40px;
+                                        width: 58px;
+                                        color: #fff;
+                                        border: none;
+                                        outline: none;
+                                        border-radius: 10px;
+                                        margin-left: 10px;
+                                        background: none;
+                                        border: 2px solid #2c3d50;
+                                        transition: 0.2s"
+                                onmouseout="this.style.background='none'"
+                                onmouseover="this.style.background='#2c3d50'">
+                              
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="rightside"
+                id="rightside"
+                style="position: relative;
+                    flex: 30%;
+                    height: 100%;
+                    background-color:#fff;
+                    display: none;
+                    border-left: 1px solid rgba(0,0,0,0.2);">
+                    <div class="header"
+                        style="height: 60px;
+                            width: 100%;
+                            background:#34495e;
+                            text-align:center;">
+                    <h3 style="line-height: 60px;
+                            color: #fff;">
+                        STAMPS
+                    </h3>
+                    </div>
+                    <div class="stamps"
+                        style="display: flex;
+                                flex-wrap:wrap;
+                                justify-content:space-between;
+                                padding: 10px;
+                                overflow: scroll;
+                                height: calc(100vh - 100px)">
+                        <button type = "button"
+                                onclick = "stamp();"
+                                style="
+                                    width: 80px;
+                                    height: 80px;
+                                    border: none;
+                                    outline: none;
+                                    margin-bottom: 10px;
+                                    border-radius: 40px;
+                                    background:#fff;">
+                            <img src = "stamp_ukareru_woman.png"
+                                    alt="嬉しい"
+                                    style="width: 80px;
+                                            height: 80px;
+                                            position:relative;
+                                            left: -7px;
+                                            bottom: 4px;
+                                            border-radius: 40px;
+                                            background: white;
+                                            margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stampyorokobi();"
+                                style="
+                                    width: 80px;
+                                    height: 80px;
+                                    border: none;
+                                    outline: none;
+                                    margin-bottom: 10px;
+                                    border-radius: 40px;
+                                    background:#fff;">
+                            <img src = "stamp_yorokobi_man.png"
+                                    alt="喜び"
+                                    style="width: 80px;
+                                            height: 80px;
+                                            position:relative;
+                                            left: -7px;
+                                            bottom: 4px;
+                                            border-radius: 40px;
+                                            background: white;
+                                            margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stampangry();"
+                                style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_okoru_man.png"
+                                alt="怒り"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stampkuyasi();"
+                                style="
+                                    width: 80px;
+                                    height: 80px;
+                                    border: none;
+                                    outline: none;
+                                    margin-bottom: 10px;
+                                    border-radius: 40px;
+                                    background:#fff;">
+                            <img src = "stamp_kuyashii_woman.png"
+                                    alt="悔しい"
+                                    style="width: 80px;
+                                            height: 80px;
+                                            position:relative;
+                                            left: -7px;
+                                            bottom: 4px;
+                                            border-radius: 40px;
+                                            background: white;
+                                            margin-right: 20px;"/>
+                        </button><button type = "button"
+                                onclick = "stampmoetuki();"
+                                style="
+                                    width: 80px;
+                                    height: 80px;
+                                    border: none;
+                                    outline: none;
+                                    margin-bottom: 10px;
+                                    border-radius: 40px;
+                                    background:#fff;">
+                            <img src = "stamp_moetsuki_man.png"
+                                    alt="燃え尽き"
+                                    style="width: 80px;
+                                            height: 80px;
+                                            position:relative;
+                                            left: -7px;
+                                            bottom: 4px;
+                                            border-radius: 40px;
+                                            background: white;
+                                            margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stamppien();"
+                                style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_pien_woman.png"
+                                alt="ぴえん"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stampyorosiku();"
+                                style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_yoroshiku.png"
+                                alt="よろしく"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stamptoutoi();"
+                                style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_toutoi.png"
+                                alt="尊い"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stampthankyou();"
+                                style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_thank_you.png"
+                                alt="ありがとう"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stamptasukaru();"
+                                style="
+                                        width: 100px;
+                                        height: 20px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_tasukarimashita.png"
+                                alt="助かりました"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stampkansou();"
+                                style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_kojinno_kansoudesu.png"
+                                alt="個人の感想です"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stamphapiba();"
+                                style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_happy_birthday_people.png"
+                                alt="誕生日おめでとう"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                    </div>              
+        </div>
+        
+        </div>
+    </div>
+</div>
+
+<script src="/javascripts/socket.js"></script>
+<script src="/javascripts/enter.js"></script>
+<script src="/javascripts/publish.js"></script>
+<script src="/javascripts/memo.js"></script>
+<script src="/javascripts/stamp.js"></script>
+<script src="/javascripts/member.js"></script>
+<script src="/javascripts/exit.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    const menu_icon = document.getElementById('label');
+    const leftside = document.getElementById('leftside');
+    const stamp_icon = document.getElementById('catlabel');
+    const rightside = document.getElementById('rightside');
+    const textarea = document.querySelector("textarea");
+    const sendButton = document.getElementById('send');
+    const memoButton = document.getElementById('doc');
+
+    
+
+    menu_icon.addEventListener(`click`, () => {
+        if(leftside.style.display=="none"){
+            leftside.style.display="block";
+        } else if(leftside.style.display=="block") {
+            leftside.style.display="none";
+        }
+    })
+
+    stamp_icon.addEventListener('click', () => {
+        if(rightside.style.display=="none"){
+            rightside.style.display="block";
+        } else if(rightside.style.display=="block") {
+            rightside.style.display="none";
+        }
+    })
+
+    textarea.addEventListener('keyup', (e) => {
+        textarea.style.height = `66px`; 
+        const scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`; 
+    });
+
+    sendButton.addEventListener('click', (e) => {
+        textarea.style.height = `66px`;
+    })
+
+    memoButton.addEventListener('click', (e) => {
+        textarea.style.height = `66px`;
+    })
+ 
+    
+</script>
+
+<style>
+    .mymessage .message::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #dcf8c6;
+        border-right: 0;
+        border-top: 0;
+        margin-top: 0px;
+        margin-right: -13px;
+    }
+
+    .othersmessage .message::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-right-color: #ddd;
+        border-left: 0;
+        border-top: 0;
+        margin-top: 0px;
+        margin-left: -13px;
+    }
+
+    .mymessage .message{
+        position:relative;
+        left:0px;
+        text-align:left;
+        padding: 8px;
+        max-width: 65%;
+        background:#dcf8c6;
+        border-radius: 10px;
+    }
+
+    .othersmessage .message{
+        position:relative;
+        left:0px;
+        text-align:left;
+        padding: 8px;
+        max-width: 65%;
+        background:#ddd;
+        border-radius: 10px;
+    }
+
+    .name-and-icon{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon{
+        width: 45px;
+        height: 45px;
+        border-radius: 22.5px;
+        border: 1px solid lightgray;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .mymessage{
+        display: flex;
+        flex-flow: row;
+        margin-bottom: 10px;
+        justify-content: flex-end;
+        align-items: center
+    }
+    .othersmessage{
+        display: flex;
+        flex-flow: row;
+        margin-bottom: 10px;
+        align-items: center
+    }
+
+    .memo{
+        background-color: #d6f3ff;
+        border-radius: 10px;
+    }
+
+    .stamp:hover ~ .stamps {
+        display: block;
+    }
+
+    textarea::-webkit-scrollbar{
+        width: 0px;
+    }
+
+    .imgbox {
+        position: relative;
+        height: 45px;
+        width: 45px;
+        border-radius: 22.5px;
+    }
+
+    .cover {
+        width: 45px;
+        height: 45px;
+        border-radius: 22.5px;
+        overflow: hidden;
+        border: 1px solid lightgray;
+    }
+
+    .name {
+        margin-left: 10px;
+        height: 40px;
+    }
+
+    .name p {
+        font-weight: 1000;
+        line-height: 40px;
+    }
+
+
+</style>

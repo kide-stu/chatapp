@@ -1,0 +1,122 @@
+<div id="vanta" class="main"
+    style="background: #34495e;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            height: 100vh;
+            width: 100vw;">
+    <div id="login-container" 
+        style="width: 300px auto;
+                padding: 60px 150px;
+                display: flex;
+                flex-flow:column;
+                align-items:center;
+                justify-content: center;
+                background: rgba(25,25,25,0.9);
+                opacity: 0;
+                transition: opacity 2s ease-in-out;">
+        <div class="row"
+            style="color: white;">
+            <h1 style="font-weight: 500;
+                    margin-bottom: 20px;">
+                SIGN UP
+            </h1>
+        </div>
+        <div class="row">
+            <form method="post" 
+                action="/signup">
+                <div class="index-user_name"
+                    style="display: flex;
+                            justify-content: center;">
+                    <input type="text" 
+                            id="userName" 
+                            name="userName" 
+                            class="index-user_name_text"
+                            placeholder="username"
+                            style="border: 2px solid #3498db;
+                                margin: 20px auto;
+                                background: none;
+                                padding: 14px 10px;
+                                text-align:center;
+                                width: 200px;
+                                outline: none;
+                                color: white;
+                                border-radius: 24px;
+                                transition: 0.25s;">
+                </div>
+
+                <div class="index-password"
+                    style="display: flex;
+                            justify-content: center;">
+                    <input type="password" 
+                            id="password" 
+                            name="password" 
+                            class="index-password_text"
+                            placeholder="password"
+                            style="border: 2px solid #3498db;
+                                margin: 20px auto;
+                                background: none;
+                                padding: 14px 10px;
+                                text-align:center;
+                                width: 200px;
+                                outline: none;
+                                color: white;
+                                border-radius: 24px;
+                                transition: 0.25s;">
+                </div>
+
+                <div class="index-enter"
+                    style="display: flex;
+                        align-items:center;">
+                    <input type="button"
+                            value="Sign Up" 
+                            class="common-button index-enter_button" 
+                            onclick="signup();"
+                            style="border: 2px solid #2ecc71;
+                                margin: 20px auto;
+                                background: none;
+                                padding: 14px 40px;
+                                text-align:center;
+                                outline: none;
+                                color: white;
+                                border-radius: 24px;
+                                transition: 0.25s;
+                                cursor: pointer"
+                            onmouseout="this.style.background='none'"
+                            onmouseover="this.style.background='#2ecc71'">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/javascripts/signup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+<script>
+VANTA.BIRDS({
+  el: "#vanta",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundAlpha: 0.00
+})
+
+
+    const login = document.getElementById('login-container');
+    login.style.opacity = 1;
+
+    const userName = document.querySelector(`input[type ='text']`);
+    userName.addEventListener(`focus`, (e) => {
+        e.target.style.width = "280px";
+    })
+
+    userName.addEventListener(`blur`, (e) => {
+        e.target.style.width = "200px";
+    })
+
+ </script>

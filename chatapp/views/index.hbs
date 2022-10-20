@@ -1,0 +1,269 @@
+<div id="vanta" class="main"
+    style="background: #34495e;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            height: 100vh;
+            width: 100vw;">
+    <div id="login-container" 
+        style="width: 300px auto;
+                padding: 60px 150px;
+                display: flex;
+                flex-flow:column;
+                align-items:center;
+                justify-content: center;
+                background: rgba(25,25,25,0.9);
+                opacity: 0;
+                transition: opacity 2s ease-in-out;">
+        <div class="row"
+            style="color: white;">
+            <h1 style="font-weight: 500;
+                    margin-bottom: 20px;">
+                LOGIN
+            </h1>
+        </div>
+        <div class="row">
+            <form method="post" 
+                action="/room">
+                <div class="index-user_name"
+                    style="display: flex;
+                            justify-content: center;">
+                    <input type="text" 
+                            id="userName" 
+                            name="userName" 
+                            class="index-user_name_text"
+                            placeholder="username"
+                            style="border: 2px solid #3498db;
+                                margin: 20px auto;
+                                background: none;
+                                padding: 14px 10px;
+                                text-align:center;
+                                width: 200px;
+                                outline: none;
+                                color: white;
+                                border-radius: 24px;
+                                transition: 0.25s;">
+                </div>
+                <div class="index-icon"
+                    style="text-align: center;
+                        color: white;
+                        font-size:medium;">
+                    <p>Select your icon</p>
+                    <input type="radio"
+                        name="index-icon-select"
+                        value="animal_arupaka.png"
+                        id="animal_arupaka.png"
+                        checked
+                        >
+                    <label for="animal_arupaka.png">
+                        <img src="animal_arupaka.png" 
+                            alt="アルパカ"
+                            style="width: 70px;
+                                    height: 70px;
+                                    border-radius: 40px;
+                                    background: white;
+                                    margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_buta.png"
+                        id="animal_buta.png">
+                    <label for="animal_buta.png">
+                        <img src="animal_buta.png" 
+                            alt="ブタ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_hamster.png"
+                        id="animal_hamster.png">
+                    <label for="animal_hamster.png">
+                        <img src="animal_hamster.png" 
+                            alt="ハムスター"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_hiyoko.png"
+                        id="animal_hiyoko.png">
+                    <label for="animal_hiyoko.png">
+                        <img src="animal_hiyoko.png" 
+                            alt="ヒヨコ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <br>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_inu.png"
+                        id="animal_inu.png">
+                    <label for="animal_inu.png">
+                        <img src="animal_inu.png" 
+                            alt="イヌ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_kuma.png"
+                        id="animal_kuma.png"
+                        >
+                    <label for="animal_kuma.png">
+                        <img src="animal_kuma.png" 
+                            alt="クマ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_mitsubachi.png"
+                        id="animal_mitsubachi.png">
+                    <label for="animal_mitsubachi.png">
+                        <img src="animal_mitsubachi.png" 
+                            alt="ミツバチ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_neko.png"
+                        id="animal_neko.png">
+                    <label for="animal_neko.png">
+                        <img src="animal_neko.png" 
+                            alt="ネコ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <br>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_panda.png"
+                        id="animal_panda.png">
+                    <label for="animal_panda.png">
+                        <img src="animal_panda.png" 
+                            alt="パンダ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_penguin.png"
+                        id="animal_penguin.png">
+                    <label for="animal_penguin.png">
+                        <img src="animal_penguin.png" 
+                            alt="ペンギン"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_usagi.png"
+                        id="animal_usagi.png">
+                    <label for="animal_usagi.png">
+                        <img src="animal_usagi.png" 
+                            alt="ウサギ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                    <input type="radio" 
+                        name="index-icon-select"
+                        value="animal_zou.png"
+                        id="animal_usagi.png">
+                    <label for="animal_usagi.png">
+                        <img src="animal_zou.png" 
+                            alt="ゾウ"
+                            style="width: 70px;
+                                height: 70px;
+                                border-radius: 40px;
+                                background: white;
+                                margin-right: 16px;">
+                    </label>
+                </div>
+
+                <div class="index-enter"
+                    style="display: flex;
+                        align-items:center;">
+                    <input type="button"
+                            value="LogIn" 
+                            class="common-button index-enter_button" 
+                            onclick="enter();"
+                            style="border: 2px solid #2ecc71;
+                                margin: 20px auto;
+                                background: none;
+                                padding: 14px 40px;
+                                text-align:center;
+                                outline: none;
+                                color: white;
+                                border-radius: 24px;
+                                transition: 0.25s;
+                                cursor: pointer"
+                            onmouseout="this.style.background='none'"
+                            onmouseover="this.style.background='#2ecc71'">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/javascripts/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+<script>
+VANTA.BIRDS({
+  el: "#vanta",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundAlpha: 0.00
+})
+
+
+    const login = document.getElementById('login-container');
+    login.style.opacity = 1;
+
+    const userName = document.querySelector(`input[type ='text']`);
+    userName.addEventListener(`focus`, (e) => {
+        e.target.style.width = "280px";
+    })
+
+    userName.addEventListener(`blur`, (e) => {
+        e.target.style.width = "200px";
+    })
+
+ </script>
